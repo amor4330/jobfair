@@ -72,8 +72,8 @@
   <footer>
     <p>@copyRight sungzzin</p>
   </footer>
-
 </div>
+
 </template>
 
 <script>

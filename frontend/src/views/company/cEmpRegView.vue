@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <div>
       <div>
         <span>채용제목</span>
@@ -131,8 +132,8 @@
 
 
     </div>
-
   </div>
+  
 </template>
 
 <script>

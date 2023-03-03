@@ -1,5 +1,6 @@
 <template>
 <div>
+
   <header>
     헤더
   </header>
@@ -23,8 +24,8 @@
   <footer>
     푸터
   </footer>
-
 </div>
+
 </template>
 
 <script>
