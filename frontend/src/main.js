@@ -6,4 +6,8 @@ import axios from 'axios'
 
 Vue.prototype.$http = axios
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+app.config.globalProperties.$axios = axios
+app.use(router)
+app.use(store)
+app.mount('#app')

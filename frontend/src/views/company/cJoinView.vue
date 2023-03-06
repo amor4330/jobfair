@@ -3,7 +3,7 @@
     <div>
       <div><a href="#">기업회원</a></div>
       <div>
-        <form>
+        <form action="">
           <p>*는 필수입력 정보란입니다.</p>
           <div>
             <input type="text" placeholder="기업명"/>
@@ -37,8 +37,7 @@
             개인정보 동의항목란
             <input type="checkbox">
           </div>
-
-          <button>가입하기</button>
+          <button type="submit" v-on:submit="joinHandler">가입하기</button>
         </form>
       </div>
     </div>
@@ -47,7 +46,7 @@
 
 <script>
 export default {
-  name: "cJoinView"
+  name: 'cJoinView'
 }
 </script>
 
