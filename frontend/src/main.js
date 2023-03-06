@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
+Vue.prototype.$http = axios
+
 const app = createApp(App)
 app.config.globalProperties.$axios = axios
 app.use(router)
