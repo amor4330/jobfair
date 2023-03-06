@@ -33,73 +33,48 @@
   </header>
 
   <div class="wrapBox">
+    <div class="wrapBox2">
+      <div class="qnaBox">
+        <h3>Q&A</h3>
+        <button class="xBtn">x</button>
+      </div>
 
-
-    <div class="qnaBox">
-      <div class="qnaBox2">
-        <div>
-          <h3>Q&A</h3>
-          <button>+ 질의 등록</button>
+      <div class="wrapBox3">
+        <div class="writer">
+          작성자  <input type="text" placeholder="내용을 입력해주세요"> <br />
         </div>
 
-        <table>
-          <thead>
-          <tr class="firstLine">
-            <td class="writer">작성자</td>
-            <td class="bigTitle">질문제목</td>
-            <td class="bigRegdate">등록시간</td>
-          </tr>
-          </thead>
+        <div class="title">
+          문의 제목  <input type="text" placeholder="내용을 입력해주세요"> <br />
+        </div>
 
-          <tbody>
-          <tr>
-            <td class="id">Id</td>
-            <td class="title">Title</td>
-            <td class="regdate">Regdate</td>
-          </tr>
-          <tr>
-            <td class="id">Id</td>
-            <td class="title">Title</td>
-            <td class="regdate">Regdate</td>
-          </tr>
-          <tr>
-            <td class="id">Id</td>
-            <td class="title">Title</td>
-            <td class="regdate">Regdate</td>
-          </tr>
-          <tr>
-            <td class="id">Id</td>
-            <td class="title">Title</td>
-            <td class="regdate">Regdate</td>
-          </tr>
-          <tr>
-            <td class="id">Id</td>
-            <td class="title">Title</td>
-            <td class="regdate">Regdate</td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="content">
+          문의 내용 <br/>
+          <textarea class="contentInput" placeholder="내용을 입력해주세요"></textarea>  <br />
+        </div>
+
       </div>
+      <button class="askBtn">문의하기</button>
     </div>
+
 
   </div>
 </template>
 
 <script>
 export default {
-  name: "uQnAView"
+  name: "uQnAWriteView"
 }
 </script>
 
 <style scoped>
-/*글씨체*/
+/*폰트설정*/
 @font-face {
-  font-family: 'MICEGothic Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
 }
-
 /* 공통 부분 */
 *{
   padding: 0;
@@ -247,77 +222,101 @@ header{
 
 
 }
+
 .wrapBox {
-  display: flex;
-  align-items: center;
-
-}
-
-.qnaBox {
-  border: 1px solid red;
-  width: 1200px;
-  height: 500px;
+  border: 1px solid grey;
+  width: 800px;
+  height: 800px;
   margin: 0 auto;
   margin-top: 100px;
-  font-family: 'MICEGothic Bold';
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
 }
 
-
-
-.qnaBox table {
-  border-collapse: collapse;
+.wrapBox2 {
+  width: 670px;
+  height: 670px;
+  margin: auto;
+  overflow: hidden;
 
 }
 
-.qnaBox tr {
-  text-align: center;
-}
-
-.qnaBox td {
-  border: 1px solid grey;
-}
-
-.qnaBox .firstLine {
-  background-color: rgb(227, 227, 227);
-}
-
-.qnaBox .writer {
-  width: 200px;
-  padding: 5px;
-  text-align: center;
-}
-
-
-
-.qnaBox .title {
-  width: 500px;
-  height: 40px;
-  padding: 5px;
+.wrapBox2 .qnaBox {
   text-align: left;
-
+  font-size: 30px;
+  height: 80px;
 }
 
-.qnaBox .regdate {
-  width: 200px;
-  text-align: center;
-
-}
-
-.qnaBox h3 {
-  font-size: 20px;
-  font-family: 'MICEGothic Bold';
-  margin-bottom: 20px;
-}
-
-.qnaBox2 h3 {
-  font-size: 25px;
-}
-
-.qnaBox2 button {
-  font-size: 18px;
-  border: none;
+.wrapBox2 .qnaBox .xBtn {
   position: relative;
-  left: 830px;
-  bottom: 40px;
+  width: 40px;
+  left: 600px;
+  font-size: 30px;
+  bottom: 30px;
+}
+
+.wrapBox3 .writer {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  left: 50px;
+  font-size: 20px;
+}
+
+.wrapBox3 .writer input {
+  position: relative;
+  left: 100px;
+  width: 300px;
+  height: 30px;
+}
+
+.wrapBox3 .title {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  left: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.wrapBox3 .title input {
+  position: relative;
+  left: 80px;
+  width: 300px;
+  height: 30px;
+}
+
+.wrapBox3 .content {
+  height: 50px;
+  position: relative;
+  left: 50px;
+  font-size: 20px;
+
+}
+
+.wrapBox3 .content .contentInput {
+  height: 350px;
+  width: 550px;
+  margin-top: 15px;
+  resize: none;
+}
+
+
+.askBtn {
+  position: relative;
+  left: 250px;
+  top: 370px;
+  width: 150px;
+  height: 40px;
+  font-family: 'Happiness-Sans-Title';
+  background-color: rgb(95, 75, 229);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+body {
+  font-family: 'Happiness-Sans-Title';
 }
 </style>

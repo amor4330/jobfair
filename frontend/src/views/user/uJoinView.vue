@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "uJoinView"
+  name: 'uJoinView'
 }
 </script>
 
