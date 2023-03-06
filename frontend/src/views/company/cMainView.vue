@@ -1,6 +1,6 @@
 <template>
 <div>
-
+<div class="comBoxWrap">
   <header>
     <h1><a href="#" class=""><img alt="HomePage logo" src="#"></a></h1>
     <div class="">
@@ -15,14 +15,14 @@
     </div>
   </header>
 
-  <section>
-    <div>
-      <button type="button">공고등록하기</button>
-      <div>인재채용 잘하는 꿀팁</div>
+  <section class="comMiddle">
+    <div class="comLeftBox">
+      <button type="button" class="comBtn1">공고등록하기</button>
+      <div class="comTip">인재채용 잘하는 꿀팁</div>
     </div>
-    <div>
 
-      <div>
+    <div class="comTop">
+      <div class="comRightBox comRecStatus">
         <p>채용현황</p>
         <a href="#">진행중 공고 <p>0</p></a>
         <a href="#">서류/면접중 공고 <p>0</p></a>
@@ -30,14 +30,14 @@
         <a href="#">미열람이력서 <p>0</p></a>
       </div>
 
-      <div>
+      <div class="comRightBox comRecStatusList">
         <p>인재관리 현황</p>
       </div>
 
     </div>
 
-    <!-- radio 클릭 시 슬라이더 형식으로 만들어보기 -->
-    <div>
+    <div class="comBottomBox">
+    <div class="comRecList">
       <input type="radio" checked>
       <input type="radio">
       <input type="radio">
@@ -53,7 +53,7 @@
 
     </div>
 
-    <div>
+    <div class="comNewComer">
       <p>지원자 목록</p>
       <img src="#" alt="#">
       <p>지원자 정보</p>
@@ -61,17 +61,17 @@
       <button type="button">next</button>
 
     </div>
-
-<!--  모달창 만들기  -->
-    <div>
-      <h4>아직 미가입 기업인가요? 회원가입 후 이용해보세요</h4>
-      <button>취소하기</button>
-      <button>가입하기</button>
     </div>
+
   </section>
+    <!-- radio 클릭 시 슬라이더 형식으로 만들어보기 -->
+
+
+
   <footer>
     <p>@copyRight sungzzin</p>
   </footer>
+</div>
 </div>
 
 </template>
@@ -83,5 +83,74 @@ export default {
 </script>
 
 <style scoped>
+.comBoxWrap{width:1200px; margin: 0 auto}
+a {text-decoration: none; color: black}
+.comMiddle {
+  display: flex;
+  height: 500px;
+}
+.comLeftBox{
+  width: 300px;
+  border: 3px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  float: left;
+}
+.comBtn1{
+  text-align: center;
+  margin: 30px;
+  font-size: medium;
+  color: white;
+  background-color: rgb(95,75,229);
+}
+.comTip{
+  height: 70%;
+  border: 3px solid;
+  text-align: center;
+}
 
+.comRightBox {
+  border: 3px solid red;
+  display: flex;
+  justify-content: space-between;
+  float: left;
+}
+.comRightBox a {
+  text-align: center;
+}
+
+.comTop {
+  display: inline-flex;
+}
+.comBottomBox {
+  display: inline-flex;
+}
+
+.comRecStatus {
+  border: 3px solid yellow;
+  width: 670px;
+  height: 110px;
+  text-align: center;
+}
+.comRecStatus a {
+  margin: 30px 20px 10px 10px;
+  text-align: center;
+}
+.comRecStatus a p {
+  color: rgb(95,75,229);
+  font-size: large;
+  font-weight: bold;
+}
+.comRecStatusList {
+  width: 300px;
+  height: 110px;
+  text-align: center;
+}
+.comRecList {
+  text-align: center;
+}
+.comNewComer {
+  text-align: center;
+}
 </style>
