@@ -19,7 +19,12 @@ const routes = [
   {
     path: '/uJoinView',
     name: 'uJoinView',
-    component: () => import(/* webpackChunkName: "user" */ '../views/user/uJoinView.vue')
+    component: () => import('../views/user/uJoinView.vue')
+  },
+  {
+    path: '/cMainView',
+    name: 'cMainView',
+    component: () => import('../views/company/cMainView.vue')
   }
 ]
 
