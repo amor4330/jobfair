@@ -22,6 +22,11 @@ const routes = [
     component: () => import('../views/user/uJoinView.vue')
   },
   {
+    path: '/uMainView',
+    name: 'uMainView',
+    component: () => import('../views/user/uMainView.vue')
+  },
+  {
     path: '/cMainView',
     name: 'cMainView',
     component: () => import('../views/company/cMainView.vue')

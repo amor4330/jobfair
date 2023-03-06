@@ -110,7 +110,7 @@
 import axios from 'axios'
 
 export default {
-  // name: 'uJoinView'
+  name: 'uJoinView'
   data: function () {
     return {
       username: this.username,

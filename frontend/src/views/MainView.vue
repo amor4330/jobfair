@@ -1,6 +1,5 @@
 /* eslint-disable */
 <template>
-  /* */
   <div class="wrapBox">
     <div class="miniWrapBox">
       <div class="logoBox">
@@ -22,7 +21,6 @@
         <a href="#">비밀번호찾기</a>
         <p>좋은 직업을 찾고싶으신가요? 가입하시고 다양한 정보를 얻어가세요!<a href="#">회원가입</a></p>
       </div>
-
     </div>
   </div>
 </template>
@@ -65,6 +63,33 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+.miniWrapBox {
+  height: 500px;
+  width: 500px;
+}
+
+/*라디오 박스 크기 수정 및 글씨 정렬 설정*/
+.radioBox input {
+  font-size: 1em;
+  width: 1.25em; /* 너비 설정 */
+  height: 1.25em; /* 높이 설정 */
+  vertical-align: middle;
+}
+.radioBox input + span{ /* 라벨 텍스트 크기와 수직 정렬 맞춤 */
+  font-size: 1.125em;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+.radioBox {
+  height: 50px;
+  line-height: 50px;
+}
+
+/*회사 로고 넣는 곳 높이 넓힘*/
+.logoBox {
+height: 100px;
 }
 
 .miniWrapBox {
