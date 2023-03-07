@@ -1,7 +1,7 @@
 <template>
 <div class="container-fluid container">
   <div class="dropdown">
-    <table class="table dropdown-toggle" data-bs-toggle="dropdown">
+    <table class="table dropdown-toggle" id="dropdown-toggle" data-bs-toggle="dropdown">
       <thead class="table-dark">
       <tr>
         <th>채용제목</th>
@@ -14,7 +14,7 @@
         <td>3</td>
       </tr>
       </tbody>
-          <table class="table dropdown-menu" data-bs-toggle="dropdown">
+          <table class="table dropdown-menu" id="dropdown-menu" data-bs-toggle="dropdown">
             <thead class="table-dark">
             <tr class="">
               <th>지원일자</th>
@@ -52,14 +52,6 @@
                 <input type="text" placeholder="서류합격시 면접일자등록기능">
               </td>
             </tr>
-            <tr>
-              <td><a href="#">채용제목 클릭 시 지원자 상세내역 리스트 보이게하기</a></td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td><a href="#">채용제목 클릭 시 지원자 상세내역 리스트 보이게하기</a></td>
-              <td>4</td>
-            </tr>
             </tbody>
           </table>
     </table>
@@ -74,11 +66,16 @@ export default {
 </script>
 
 <style scoped>
-* {margin: 0; padding: 0;}
+* {margin: 0 auto; padding: 0;}
 a {text-decoration: none; color: black}
 a:hover {color: grey}
 
+#dropdown-toggle {
+  position: relative;
+}
+
 .dropdown-menu {
+  position: absolute;
   text-align: center;
   width: auto;
   white-space: nowrap;

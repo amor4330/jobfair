@@ -32,9 +32,9 @@ const routes = [
     component: () => import('../views/company/cMainView.vue')
   },
   {
-    path: '/cApplyMngView',
-    name: 'cApplyMngView',
-    component: () => import('../views/company/cApplyMngView.vue')
+    path: '/cEmpModiView',
+    name: 'cEmpModiView',
+    component: () => import('../views/company/cEmpModiView.vue')
   }
 ]
 
