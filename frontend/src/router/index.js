@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
-import HomeView from '@/views/MainView.vue'
 
 const routes = [
   {
@@ -30,6 +29,11 @@ const routes = [
     path: '/cMainView',
     name: 'cMainView',
     component: () => import('../views/company/cMainView.vue')
+  },
+  {
+    path: '/cJoinView',
+    name: 'cJoinView',
+    component: () => import('../views/company/cJoinView.vue')
   }
 ]
 

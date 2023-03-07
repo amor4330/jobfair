@@ -1,4 +1,5 @@
 module.exports = {
+  lintOnSave: false,
   outputDir: "../src/main/resources/static",  // 빌드 타겟 디렉토리
   devServer: {
     proxy: {
