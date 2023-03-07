@@ -6,8 +6,8 @@
         <img src="#" alt="HomePage Logo">
       </div>
       <div class="radioBox">
-        <input type="radio" name="radioBtn" value="1" v-model="auth"><span>개인회원</span>
-        <input type="radio" name="radioBtn" value="2" v-model="auth"><span>기업회원</span>
+        <input type="radio" name="radioBtn" value="1" v-model="auth" @change="changeLink"><span>개인회원</span>
+        <input type="radio" name="radioBtn" value="2" v-model="auth" @change="changeLink"><span>기업회원</span>
       </div>
       <div class="loginBox">
         <input type="text" name="" id="idInput" placeholder="username" v-model="id"><br/>
@@ -44,7 +44,7 @@ export default {
           pw: this.pw
         })
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
         })
         .catch((error) => {
           console.log(error)
@@ -52,8 +52,16 @@ export default {
         .finally(() => {
           console.log('로그인실행')
         })
+    },
+    changeLink () {
+      console.log(this.auth)
+      if(this.auth === '1') this.link = '/uJoinView'
+      else this.link = '/cJoinView'
+      console.log(this.link)
     }
   }
+
+
 }
 </script>
 
