@@ -66,8 +66,6 @@
   </section>
     <!-- radio 클릭 시 슬라이더 형식으로 만들어보기 -->
 
-
-
   <footer>
     <p>@copyRight sungzzin</p>
   </footer>
@@ -78,11 +76,13 @@
 
 <script>
 export default {
-  name: "cMainView"
+  name: 'cMainView'
 }
 </script>
 
 <style scoped>
+
+
 .comBoxWrap{width:1200px; margin: 0 auto}
 a {text-decoration: none; color: black}
 .comMiddle {
