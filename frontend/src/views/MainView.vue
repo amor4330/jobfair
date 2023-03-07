@@ -35,6 +35,7 @@ export default {
       pw: ''
     }
   },
+  compatConfig: { MODE: 3 },
   methods: {
     logInBtn () {
       this.$axios
