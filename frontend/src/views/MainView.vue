@@ -38,6 +38,7 @@ export default {
       link : '/uJoinView'
     }
   },
+  compatConfig: { MODE: 3 },
   methods: {
     logInBtn () {
       this.$axios

@@ -31,6 +31,11 @@ const routes = [
     component: () => import('../views/company/cMainView.vue')
   },
   {
+    path: '/cEmpModiView',
+    name: 'cEmpModiView',
+    component: () => import('../views/company/cEmpModiView.vue')
+  },
+  {
     path: '/cJoinView',
     name: 'cJoinView',
     component: () => import('../views/company/cJoinView.vue')
