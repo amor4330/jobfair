@@ -5,7 +5,7 @@
         <a href="#">개인회원</a>
       </div>
       <div class="rightBox" @click="OpenForm($event)">
-        <a href="#">기업회원</a>
+        <a href="##">기업회원</a>
       </div>
       <p>
         <strong :style="{color:'red'}">*</strong>는 필수입력 정보란입니다.
