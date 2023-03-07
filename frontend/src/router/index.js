@@ -13,7 +13,7 @@ const routes = [
     name: 'JoinView',
     component: () => import('../views/JoinView.vue')
   },
-
+cd
   {//유저메인화면
     path: '/uMainView',
     name: 'uMainView',
