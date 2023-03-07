@@ -19,13 +19,20 @@
 
           </li>
           <li><a class="dropbtn">채용공고</a>
-            <!-- <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div> -->
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
           </li>
-          <li><a>Q&A</a></li>
+          <li><a class="dropbtn">Q&A</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+
+          </li>
         </ul>
       </div>
     </div>
@@ -39,6 +46,20 @@
 export default {
   name: "HeaderView.vue"
 }
+
+// var dropdown = document.querySelectorAll(".dropdown-content");
+//
+// for(let i = 0; i < dropdown.length; i++){
+//   dropdown[i].parentElement.firstChild.onmouseover = function(){
+//     dropdown[i].classList.add('active');
+//     dropdown[i].parentElement.onmouseleave = function(){
+//       dropdown[i].classList.remove('active');
+//     }
+//   }
+// }
+
+
+
 </script>
 
 <style scoped>
@@ -68,6 +89,7 @@ header{
 .logo {
   float: left;
   width:10%;
+  padding-top:30px;
 }
 
 .logo a{color:white;font-size: 30px;font-weight: bold;}
@@ -82,23 +104,25 @@ header{
   overflow: hidden;
   display: flex;
   justify-content: space-around;
+  padding-top:30px;
 }
 .headerMenu  li{
   float: left;
   display: inline-block;
   text-align: center;
+
 }
 .headerMenu li a {
   display:inline-block;
-  height:20px;
-  width:100px;
+  height:60px;
+  width:160px;
   font-weight: bold;
-  cursor: pointer;}
-.headerMenu  li a:hover {border-bottom:3px solid white;}
+  cursor: pointer;
 
+}
 /* 헤더 검색 */
 .searchForm {
-  width:330px;
+  width:370px;
   height:40px;
   border-radius: 10px;
   border: 3px solid #90aee8;
@@ -107,7 +131,7 @@ header{
   margin-top:10px;
 }
 
-.searchInput {width:290px;
+.searchInput {width:325px;
   height:40px;
   background-color: transparent;
   float: left;
@@ -141,8 +165,25 @@ header{
 }
 
 /* 헤더 검색 --end */
+.dropdown-content {display: none;
+  background-color: #f9f9f9;
+  width: 160px;}
 
 
+.dropdown-content a:hover {background-color: #f1f1f1;
+  width:160px;
+}
+
+.toggle-menu {display: none;}
+.active {
+  display: block;
+}
+
+
+
+/* .dropdown:hover .dropdown-content {
+        display: block;
+    } */
 
 @media (max-width: 1200px) {
   .header_size {width:100%;}
@@ -163,6 +204,8 @@ header{
 
   .detailSearch {display: none;}
 }
+
+
 
 
 </style>

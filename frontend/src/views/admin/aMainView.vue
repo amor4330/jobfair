@@ -1,4 +1,56 @@
 <template>
+<div class="containerWrap">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="companyNumImg">
+          <img src="img/icon_com.png">
+        </div>
+        <div class="companyNum_text">
+
+          <span>참여 기업 수</span>
+          <p>8</p>
+
+        </div>
+
+      </div>
+      <div class="col-md-3 p-3 bg-primary text-white">
+        <div class="userInfoFirstLine">
+          <div>
+            <img src="#">
+            <h3>OOO님의 <br/>입사 지원 현황</h3>
+            <a href="#">쪽지(3)</a>
+          </div>
+        </div>
+        <div class="userInfoSecondLine">
+          <ul class="userInfoSecondLine1">
+            <li>10</li>
+            <li>지원완료</li>
+          </ul>
+
+          <ul class="userInfoSecondLine2">
+            <li>10</li>
+            <li>열람</li>
+          </ul>
+
+          <ul class="userInfoSecondLine3">
+            <li>10</li>
+            <li>미열람</li>
+          </ul>
+
+        </div>
+
+        <div>
+          <button>이력서 관리</button>
+          <button>mypage</button>
+        </div>
+
+      </div>
+      <div class="col-md-3 p-3 bg-primary text-white">.col</div>
+      <div class="col-md-3 p-3 bg-dark text-white">.col</div>
+    </div>
+  </div>
+
   <div class="adminBg">
     <div class="companyWrap">
       <!--###############참여 기업 상태-->
@@ -74,30 +126,7 @@
 
       </div>
     </div>
-
-
-    <!-- <div class="profile">
-        <div class="profileWrap">
-            <img src="" alt="이미지">
-            <div>OOO님</div>
-            <div>쪽지(12)</div>
-                <ul>
-                    <li>
-                    <div>11</div>
-                    <div>담당자 신청 목록</div>
-                    </li>
-                    <li>
-                    <div>6</div>
-                    <div>참여업체 신청 목록</div>
-                    </li>
-                </ul>
-                <div>채용 담당자 신청 목록 조회</div>
-                <div>참여업체 신청 목록 조회</div>
-            </div>
-        </div> -->
-
   </div>
-  <!--###############채용공고 목록-->
   <div>
     <h3>채용공고 목록</h3>
 
@@ -168,23 +197,13 @@
           <input type="button" value="지원자" class = "left aplBtn">
         </div>
       </div>
-
-
-
-
-
-
-
     </div>
-
-
-
   </div>
+</div>
 </template>
-
 <script>
 export default {
-  name: "aMainView"
+  name: 'aMainView'
 }
 </script>
 
@@ -202,6 +221,8 @@ a {text-decoration: none;}
 h3{font-size: 18px;}
 
 .left{float: left;}
+
+.row{width:1200px;}
 
 .adminBg{width : 100%; height:100%;background-color: #efefef;border:1px solid red;}
 
@@ -241,17 +262,9 @@ h3{font-size: 18px;}
 }
 .companyNum_text p{font-size: 50px;margin-top: 10px;}
 
-.companyNumImg {border: 1px solid red; height:150px;background-image: url("img/icon_chk.png")  ;}
+.companyNumImg {border: 1px solid red; height:150px;}
+/*background-image: url("img/icon_chk.png")  ;*/
 .companyNumImg img{opacity: 30%;width:90px;position: absolute;top:50px;left:10px;}
-/* .profile {width:350px;
-          float: left;
-}
-.profileWrap {
-
-            } */
-
-
-
 .userInfoBox {
   margin-top: 50px;
 }
@@ -284,12 +297,6 @@ h3{font-size: 18px;}
 .userInfoSecondLine .userInfoSecondLine3 {
   float: left;
 }
-
-
-
-
-
-
 .empBoxWrap{width:1200px;}
 .empBox {background-color:rgb(240, 240, 240);
   margin: 10px;
@@ -331,9 +338,6 @@ h3{font-size: 18px;}
 
 .empBox img{width:70px;
   height:70px;}
-
-
-
 /* 헤더 스타일 */
 header{
   background-color: rgb(95, 75, 229);
@@ -357,7 +361,8 @@ header{
 .searchForm {position: relative;
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {
+  /*background-image: url("img/search.png");*/
   background-size:contain;
   width:35px;
   height:28px;
@@ -368,8 +373,6 @@ header{
   right:120px;
   cursor: pointer;
 }
-
-
 .search {width:380px;
   height:40px;
   border-radius: 10px;

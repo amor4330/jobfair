@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
-import HomeView from '@/views/MainView.vue'
 
 const routes = [
   {
@@ -27,9 +26,9 @@ const routes = [
     component: () => import('../views/user/uMainView.vue')
   },
   {
-    path: '/cMainView',
-    name: 'cMainView',
-    component: () => import('../views/company/cMainView.vue')
+    path: '/aMainView',
+    name: 'aMainView',
+    component: () => import('../views/admin/aMainView.vue')
   }
 ]
 
