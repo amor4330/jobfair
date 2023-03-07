@@ -47,7 +47,7 @@
             <a href="#">신규지원자 <p>0</p></a>
             <a href="#">미열람이력서 <p>0</p></a>
           </div>
-
+          
           <div class="comRightBox comRecStatusList">
             <span>인재관리 현황</span>
           </div>
