@@ -8,47 +8,47 @@
         <a href="#">기업회원</a>
       </div>
       <p>
-        <strong v-bind:style="{color:'red'}">*</strong>는 필수입력 정보란입니다.
+        <strong :style="{color:'red'}">*</strong>는 필수입력 정보란입니다.
       </p>
       <div>
-        <form @submit="joinHandler" method="post">
+        <form @submit="checkSubmit($event)" action="/jobfair/uJoin" method="post">
           <p>*는 필수입력 정보란입니다.</p>
           <div>
-            <input type="text" placeholder="이름(실명)" v-model = "username"/>
+            <input type="text" name="user_name" placeholder="이름(실명)" v-model = "username"/>
           </div>
           <div>
-            <input type="text" placeholder="아이디" v-model = "id"/>
-            <button @click="SameIdCheck">중복확인</button>
+            <input type="text" name="user_id" placeholder="아이디" v-model = "id"/>
+            <button @click="sameIdCheck">중복확인</button>
             <span>{{msg}}</span>
           </div>
           <div>
-            <input type="password" autoComplete="off" placeholder="비밀번호(8~16자의 영문,숫자,특수기호)" v-model = "password"/>
+            <input type="password" name="user_pw" autoComplete="off" placeholder="비밀번호(8~16자의 영문,숫자,특수기호)" v-model = "password"/>
           </div>
           <div>
-            <input type="text" placeholder="이메일" v-model = "email"/>
+            <input type="text" name="user_email" placeholder="이메일" v-model = "email"/>
           </div>
           <div>
-            <input type="text" placeholder="휴대폰번호" v-model ="phone"/>
+            <input type="text" name="user_phone" placeholder="휴대폰번호" v-model ="phone"/>
             <button>인증번호 전송</button>
           </div>
           <div>
-            <input type="text" placeholder="인증번호 입력" v-model ="certification_num">
+            <input type="text" name="" placeholder="인증번호 입력" v-model ="certification_num">
             <button>확인</button>
             <button>재전송</button>
           </div>
-        </form>
-        <div>
           <div>
-            필수동의 항목 및 개인정보 수집 및 이용동의
-            <input type="checkbox" id="agree1">
-          </div>
-          <div>
-            개인정보 동의항목란
-            <input type="checkbox" id="agree2">
-          </div>
+            <div>
+              필수동의 항목 및 개인정보 수집 및 이용동의
+              <input type="checkbox" id="agree1">
+            </div>
+            <div>
+              개인정보 동의항목란
+              <input type="checkbox" id="agree2">
+            </div>
 
-          <button>가입하기</button>
-        </div>
+            <input type="submit" value="가입하기">
+          </div>
+        </form>
       </div>
     </div>
 
@@ -88,19 +88,19 @@
           <div>
             <input type="date" placeholder="설립일">
           </div>
-        </form>
-        <div>
           <div>
-            필수동의 항목 및 개인정보 수집 및 이용동의
-            <input type="checkbox">
-          </div>
-          <div>
-            개인정보 동의항목란
-            <input type="checkbox">
-          </div>
+            <div>
+              필수동의 항목 및 개인정보 수집 및 이용동의
+              <input type="checkbox" value="checkedBox" v-model="checkbox">
+            </div>
+            <div>
+              개인정보 동의항목란
+              <input type="checkbox" value="checkedBox" v-model="checkbox">
+            </div>
 
-          <button>가입하기</button>
-        </div>
+            <input type="submit" value="가입하기" @click="joinHandler(e)">
+          </div>
+        </form>
       </div>
       </div>
     </div>
@@ -108,9 +108,10 @@
 
 <script>
 import axios from 'axios'
+import router from '@/router'
 
 export default {
-  name: 'uJoinView'
+  name: 'uJoinView',
   data: function () {
     return {
       username: this.username,
@@ -119,14 +120,15 @@ export default {
       email: this.email,
       phone: this.phone,
       certification_num: this.certification_num,
-      msg: ''
+      msg: '',
+      checkedBox : [],
+      errorMsg : []
     }
   },
   methods: {
     // 아이디 중복확인 메서드
-    SameIdCheck (e) {
+    sameIdCheck (e) {
       var self = this // axios 안에서 this 키워드 동작 제대로 안되서 여기서 변수로 선언해줌
-      e.preventDefault()
       this.$axios.post('/jobfair/checkSameId', { user_id: this.id })
         .then(function (response) {
           console.log(response)
@@ -137,30 +139,12 @@ export default {
         })
     },
     // 회원가입 처리 메서드
-    joinHandler (e) {
-      var self = this // axios 안에서 회원가입 요청 성공 반환시 페이지를 이동시켜주기 위해서 this.$router를 그냥하면 에러나서 여기서 변수 선언해줌.
-      e.preventDefault()
+    checkSubmit(e) {
       if (document.getElementById('agree1').checked === false) {
-        alert('필수동의 항목을 체크해 주셔야합니다.')
-        this.$router.push('uJoinView')
-      } else { //
-        var url = '/jobfair/uJoin'
-        var data = {
-          user_name: this.username,
-          user_id: this.id,
-          user_pw: this.password,
-          user_email: this.email,
-          user_phone: this.phone
-        }
-        axios.post(url, data)
-          .then(function (response) {
-            if (response.status === 200) {
-              self.$router.push('/')
-            }
-          })
-          .catch(function (error) {
-            console.log(error)
-          })
+        alert("필수 항목을 확인해 주세요.")
+        this.errorMsg.push({ msg : '필수 항목입니다.' }) //에러메시지 담기
+        console.log(this.errorMsg)
+        e.preventDefault()
       }
     }
   }
