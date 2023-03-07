@@ -8,7 +8,7 @@
         <div class="companyNum">
           <a href="#">
             <div class="companyNumImg">
-              <img src="img/icon_com.png">
+              <img src="@/assets/icon_com.png">
             </div>
             <div class="companyNum_text">
 
@@ -19,7 +19,7 @@
           </a>
           <a href="#">
             <div class="companyNumImg">
-              <img src="img/icon_x.png">
+              <img src="@/assets/icon_x.png">
             </div>
             <div class="companyNum_text">
               <span>반려</span>
@@ -29,7 +29,7 @@
           </a>
           <a href="#">
             <div class="companyNumImg">
-              <img src="img/icon_chk.png">
+              <img src="@/assets/icon_chk.png">
             </div>
             <div class="companyNum_text">
               <span>승인완료</span>
@@ -241,7 +241,7 @@ h3{font-size: 18px;}
 }
 .companyNum_text p{font-size: 50px;margin-top: 10px;}
 
-.companyNumImg {border: 1px solid red; height:150px;background-image: url("img/icon_chk.png")  ;}
+.companyNumImg {border: 1px solid red; height:150px;background-image: url("@/assets/icon_chk.png")  ;}
 .companyNumImg img{opacity: 30%;width:90px;position: absolute;top:50px;left:10px;}
 /* .profile {width:350px;
           float: left;
@@ -357,7 +357,7 @@ header{
 .searchForm {position: relative;
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {background-image: url("@/assets/1.png")  ;
   background-size:contain;
   width:35px;
   height:28px;
