@@ -37,7 +37,7 @@
         <button type="button" class="comBtn1">공고등록하기</button>
         <div class="comTip">인재채용 잘하는 꿀팁</div>
       </div>
-
+      
       <div class="comList">
         <div class="comTopBox">
           <div class="comRightBox comRecStatus">
