@@ -6,8 +6,8 @@
         <img src="#" alt="HomePage Logo">
       </div>
       <div class="radioBox">
-        <input type="radio" name="radioBtn" value="1" v-model="auth"><span>개인회원</span>
-        <input type="radio" name="radioBtn" value="2" v-model="auth"><span>기업회원</span>
+        <input type="radio" name="radioBtn" value="1" v-model="auth" @change="changeJoinType"><span>개인회원</span>
+        <input type="radio" name="radioBtn" value="2" v-model="auth" @change="changeJoinType"><span>기업회원</span>
       </div>
       <div class="loginBox">
         <input type="text" name="" id="idInput" placeholder="username" v-model="id"><br/>
@@ -19,7 +19,7 @@
         <span>로그인상태 유지하기</span><br/>
         <a href="#">아이디찾기</a> /
         <a href="#">비밀번호찾기</a>
-        <p>좋은 직업을 찾고싶으신가요? 가입하시고 다양한 정보를 얻어가세요!<a href="#">회원가입</a></p>
+        <p>좋은 직업을 찾고싶으신가요? 가입하시고 다양한 정보를 얻어가세요!<a href="/JoinView">회원가입</a></p>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default {
           pw: this.pw
         })
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
         })
         .catch((error) => {
           console.log(error)
@@ -52,6 +52,10 @@ export default {
         .finally(() => {
           console.log('로그인실행')
         })
+    },
+    changeJoinType () {
+      this.$store.commit("setMg_auth", this.auth)
+      console.log(this.$store.getters.getMg_auth)
     }
   }
 }
