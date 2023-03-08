@@ -1,43 +1,12 @@
 <template>
-  <header>
-    <div class="header_size">
-      <div class="header_wrap">
-        <div class="logo">
-          <a href="#">logo</a>
-        </div>
-        <div class="header_form">
-
-        </div>
-        <ul class="menu dropdown">
-          <li>
-            <form class="searchForm">
-              <input type="text" class="search"/>
-              <input type="button" class="searchIcon" />
-              <button class="detailSearch">상세검색</button>
-            </form>
-
-          </li>
-          <li><a class="dropbtn">채용공고</a>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </li>
-          <li><a>Q&A</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </header>
   <div>
   <div class="comBoxWrap">
-    <section class="comMiddle">
+    <section class="comMiddle col-xl-12">
       <div class="comLeftBox">
         <button type="button" class="comBtn1">공고등록하기</button>
         <div class="comTip">인재채용 잘하는 꿀팁</div>
       </div>
-      
+
       <div class="comList">
         <div class="comTopBox">
           <div class="comRightBox comRecStatus">
@@ -47,7 +16,7 @@
             <a href="#">신규지원자 <p>0</p></a>
             <a href="#">미열람이력서 <p>0</p></a>
           </div>
-          
+
           <div class="comRightBox comRecStatusList">
             <span>인재관리 현황</span>
           </div>

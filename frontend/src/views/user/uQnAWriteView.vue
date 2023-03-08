@@ -11,7 +11,7 @@
         <ul class="menu dropdown">
           <li>
             <form class="searchForm">
-              <!— <img src="img/search.png"> —>
+              <img src="@/assets/1.png">
               <input type="text" class="search"/>
               <input type="button" class="searchIcon" />
               <button class="detailSearch">상세검색</button>
@@ -109,7 +109,7 @@ header{
 .searchForm {position: relative;
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {background-image: url("@/assets/1.png")  ;
   background-size:contain;
   width:35px;
   height:28px;

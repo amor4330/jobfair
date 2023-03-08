@@ -1,6 +1,29 @@
 <template>
-  <router-view/>
+  <div>
+    <Header v-if="!isChecked"></Header>
+    <router-view/>
+  </div>
 </template>
+
+<script>
+import Header from './components/layout/HeaderView';
+// import Footer from './layout/FooterView';
+export default  {
+  isChecked: false,
+  components: {
+    Header,
+    // Footer
+  },
+  created() {
+    if(document.location.pathname === '/') {
+      this.isChecked = true;
+      console.log(this.isChecked)
+    } else {
+      this.isChecked = false;
+    }
+  }
+}
+</script>
 
 <style>
 #app {
@@ -10,16 +33,13 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
 }
-
 nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 nav a.router-link-exact-active {
   color: #42b983;
 }

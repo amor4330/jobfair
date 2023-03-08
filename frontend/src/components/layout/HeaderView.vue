@@ -10,7 +10,7 @@
         <ul class="headerMenu dropdown">
           <li>
             <form class="searchForm">
-              <!-- <img src="img/search.png"> -->
+               <img src="@/assets/1.png">
               <input type="text" class="searchInput"/>
               <input type="button" class="searchIcon" />
 
@@ -139,7 +139,7 @@ header{
 
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {background-image: url("@/assets/1.png")  ;
   background-size:contain;
   width:40px;
   height:28px;
@@ -204,8 +204,5 @@ header{
 
   .detailSearch {display: none;}
 }
-
-
-
 
 </style>
