@@ -15,7 +15,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-  {//유저메인화면
+  //유저메인화면
   {
     path: '/uJoinView',
     name: 'uJoinView',
