@@ -15,7 +15,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-  {//유저메인화면
+  //유저메인화면
   {
     path: '/uJoinView',
     name: 'uJoinView',
@@ -46,6 +46,16 @@ const routes = [
     path: '/cJoinView',
     name: 'cJoinView',
     component: () => import('../views/company/cJoinView.vue')
+  },
+  {
+    path: '/HeaderView',
+    name: 'HeaderView',
+    component: () => import('../components/HeaderView.vue')
+  },
+  {
+    path: '/HeaderView2',
+    name: 'HeaderView2',
+    component: () => import('../components/HeaderView2.vue')
   }
 ]
 

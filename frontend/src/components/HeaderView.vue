@@ -18,15 +18,15 @@
             <button class="detailSearch">상세검색</button>
 
           </li>
-          <li><a class="dropbtn">채용공고</a>
-            <div class="dropdown-content">
+          <li><a class="dropbtn" @mouseover="doMouseOver" style="border:1px solid red">채용공고</a>
+            <div class="dropdown-content" style="display:none" >
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
           </li>
-          <li><a class="dropbtn">Q&A</a>
-            <div class="dropdown-content">
+          <li><a class="dropbtn" @mouseover="doMouseOver" style="border:1px solid red">Q&A</a>
+            <div class="dropdown-content" style="display:none">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
@@ -44,13 +44,31 @@
 
 <script>
 export default {
-  name: "HeaderView.vue"
+  // name: "HeaderView.vue",
+  data : function(){
+    return {
+      show:false,
+      show2:false
+    }
+
+  },
+  methods : {
+    doMouseOver : function(e){
+        console.log(this.$refs.refDrop);
+        console.log(this.$refs.refDrop.style.border);
+        // var i = e.style.border;
+        console.log(e.style.border);
+    }
+  }
 }
 
+
+
 // var dropdown = document.querySelectorAll(".dropdown-content");
-//
+// console.log(dropdown);
 // for(let i = 0; i < dropdown.length; i++){
 //   dropdown[i].parentElement.firstChild.onmouseover = function(){
+//     console.log(1);
 //     dropdown[i].classList.add('active');
 //     dropdown[i].parentElement.onmouseleave = function(){
 //       dropdown[i].classList.remove('active');
@@ -61,6 +79,9 @@ export default {
 
 
 </script>
+
+
+
 
 <style scoped>
 /* 공통 부분 */
@@ -139,7 +160,8 @@ header{
 
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {
+  /*background-image: url("img/search.png")  ;*/
   background-size:contain;
   width:40px;
   height:28px;
@@ -165,7 +187,7 @@ header{
 }
 
 /* 헤더 검색 --end */
-.dropdown-content {display: none;
+.dropdown-content {
   background-color: #f9f9f9;
   width: 160px;}
 
