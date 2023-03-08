@@ -48,7 +48,7 @@ export default {
           pw: this.pw
         })
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
         })
         .catch((error) => {
           console.log(error)
