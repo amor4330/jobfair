@@ -7,6 +7,8 @@ import BootstrapVue3 from 'bootstrap-vue-3'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
+// Vue.use(BootstrapVue)
+
 const app = createApp(App)
 // app 글로벌 변수 선언 실시
 app.config.globalProperties.$axios = axios

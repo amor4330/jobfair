@@ -1,6 +1,33 @@
 <template>
-  <router-view/>
+  <div>
+    <Header v-if="!isChecked"></Header>
+    <router-view/>
+  </div>
 </template>
+
+<script>
+import Header from './components/layout/HeaderView';
+// import Footer from './layout/FooterView';
+
+export default  {
+  isChecked: false,
+  components: {
+    Header,
+    // Footer
+  },
+  created() {
+    if(document.location.pathname === '/') {
+      this.isChecked = true;
+      console.log(this.isChecked)
+    } else {
+      this.isChecked = false;
+    }
+  }
+}
+
+
+
+</script>
 
 <style>
 #app {

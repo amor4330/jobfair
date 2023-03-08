@@ -115,7 +115,6 @@ export default {
   data: function () {
     return {
       mg_auth : this.$store.getters.getMg_auth,
-      radioCheck : this.$store.getters.getMg_auth === 1 ? true : false,
       username: this.username,
       id: this.id,
       password: this.password,
@@ -124,7 +123,12 @@ export default {
       certification_num: this.certification_num,
       msg: '',
       checkedBox : [],
-      errorMsg : []
+      errorMsg : [],
+      sampleData: '',
+      isActive: false,
+      hasError: false,
+      class2: ['active', 'hasError'],
+      show: false
     }
   },
   mounted () {
@@ -152,6 +156,15 @@ export default {
         e.preventDefault()
       }
     },
+    clickHandler () {
+      this.hasError = !this.hasError
+      this.isActive = !this.isActive
+    },
+    ComclickHandler () {
+      this.hasError = !this.hasError
+      this.isActive = !this.isActive
+      this.show = !this.show
+    },
     // 개인, 기업 회원가입 구분 메서드
     changeJoinType(e) {
       if(e.target.id === 'userType') {
@@ -166,7 +179,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped>
@@ -174,6 +186,106 @@ export default {
 a {text-decoration: none}
 button {cursor: pointer}
 
+.mainBox {
+  width: 100%;
+  border: 3px solid;
+}
+.leftBox a {
+  font-size: large;
+  color: black;
+  text-align: center;
+}
+.leftBox {
+  width: 50%;
+  height: 50px;
+  float: left;
+  box-sizing: border-box;
+  background-color: rgb(95,75,229);
+  padding: 10px 10px;
+}
+.leftBox:hover{
+  background-color: rgb(95,75,229,0.5);
+}
+
+.rightBox {
+  width: 50%;
+  height: 50px;
+  float: right;
+  box-sizing: border-box;
+  background-color: rgb(95,75,229);
+  padding: 10px 10px;
+}
+.rightBox:hover{
+  background-color: rgb(95,75,229,0.5);
+}
+.rightBox a {
+  font-size: large;
+  color: black;
+  text-align: center;
+}
+
+.UserBox {
+  position: relative;
+}
+.CompanyBox {
+  width: 100%;
+  position: absolute;
+  top: 344px;
+  margin: 0 auto;
+}
+
+.MemberInfo {
+  display: flex;
+  flex-direction: column;
+}
+.MemberInfo div {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.MemberInfo input {
+  display: block;
+  width: 90%;
+  height: 60px;
+}
+.PhoneRegist {
+  position: relative;
+}
+.PhoneYN {
+  position: relative;
+}
+#leftBtn {
+  position: absolute;
+  float: left;
+  top: 0;
+  right: 130px;
+  width: 150px;
+  height: 64px;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+  text-align: center;
+}
+#rightBtn {
+  position: absolute;
+  float: right;
+  top: 0;
+  right: 290px;
+  width: 150px;
+  height: 64px;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+  text-align: center;
+}
+#PhoneBtn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 130px;
+  width: 150px;
+  height: 64px;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+  text-align: center;
+}
   .mainBox {
     width: 100%;
     border: 3px solid;

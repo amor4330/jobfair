@@ -26,18 +26,15 @@
 </template>
 
 <script>
-import router from "@/router";
-
 export default {
   name: 'MainView',
   data () {
     return {
-      auth: 1,
+      auth: '1',
       id: '',
       pw: ''
     }
   },
-  compatConfig: { MODE: 3 },
   methods: {
     logInBtn () {
       this.$axios
@@ -63,6 +60,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .wrapBox {
@@ -96,7 +94,7 @@ export default {
 
 /*회사 로고 넣는 곳 높이 넓힘*/
 .logoBox {
-height: 100px;
+  height: 100px;
 }
 
 .miniWrapBox {
