@@ -1,5 +1,6 @@
 <template>
 
+
   <header>
     <div class="header_size">
       <div class="header_wrap">
@@ -18,15 +19,17 @@
             <button class="detailSearch">상세검색</button>
 
           </li>
-          <li><a class="dropbtn">채용공고</a>
-            <div class="dropdown-content">
+          <li v-on:mouseover="dropDown.menu1 = true" v-on:mouseleave="dropDown.menu1=false">
+            <a class="dropbtn" v-on:mouseover.prevent="menuOn" ref="refDrop" style="border:1px solid red">채용공고</a>
+            <div class="dropdown-content" v-if="dropDown.menu1" v-on:click="dropDown.menu1=false" >
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
           </li>
-          <li><a class="dropbtn">Q&A</a>
-            <div class="dropdown-content">
+          <li v-on:mouseover="dropDown.menu2 = true" v-on:mouseleave="dropDown.menu2=false">
+            <a class="dropbtn" @mouseover="doMouseOver" ref="refDrop" style="border:1px solid red">Q&A</a>
+            <div class="dropdown-content" v-if="dropDown.menu2" v-on:click="dropDown.menu2=false">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
@@ -44,22 +47,24 @@
 
 <script>
 export default {
-  name: "HeaderView.vue"
+  // name: "HeaderView.vue",
+  data : function(){
+    return {
+      menuHide: false,
+      dropDown: {
+        menu1: false,
+        menu2: false
+      }
+    }
+
+  },
+  methods : {
+    doMouseOver : function(e){
+
+    }
+  }
+
 }
-
-// var dropdown = document.querySelectorAll(".dropdown-content");
-//
-// for(let i = 0; i < dropdown.length; i++){
-//   dropdown[i].parentElement.firstChild.onmouseover = function(){
-//     dropdown[i].classList.add('active');
-//     dropdown[i].parentElement.onmouseleave = function(){
-//       dropdown[i].classList.remove('active');
-//     }
-//   }
-// }
-
-
-
 </script>
 
 <style scoped>
@@ -139,7 +144,8 @@ header{
 
 }
 
-.searchIcon {background-image: url("img/search.png")  ;
+.searchIcon {
+  /*background-image: url("img/search.png")  ;*/
   background-size:contain;
   width:40px;
   height:28px;
@@ -165,7 +171,7 @@ header{
 }
 
 /* 헤더 검색 --end */
-.dropdown-content {display: none;
+.dropdown-content {
   background-color: #f9f9f9;
   width: 160px;}
 
@@ -204,8 +210,5 @@ header{
 
   .detailSearch {display: none;}
 }
-
-
-
 
 </style>

@@ -6,8 +6,8 @@
         <img src="#" alt="HomePage Logo">
       </div>
       <div class="radioBox">
-        <input type="radio" name="radioBtn" value="1" v-model="auth" @change="changeLink"><span>개인회원</span>
-        <input type="radio" name="radioBtn" value="2" v-model="auth" @change="changeLink"><span>기업회원</span>
+        <input type="radio" name="radioBtn" value="1" v-model="auth"><span>개인회원</span>
+        <input type="radio" name="radioBtn" value="2" v-model="auth"><span>기업회원</span>
       </div>
       <div class="loginBox">
         <input type="text" name="" id="idInput" placeholder="username" v-model="id"><br/>
@@ -19,26 +19,22 @@
         <span>로그인상태 유지하기</span><br/>
         <a href="#">아이디찾기</a> /
         <a href="#">비밀번호찾기</a>
-        <p>좋은 직업을 찾고싶으신가요? 가입하시고 다양한 정보를 얻어가세요!<a :href="link">회원가입</a></p>
+        <p>좋은 직업을 찾고싶으신가요? 가입하시고 다양한 정보를 얻어가세요!<a href="#">회원가입</a></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import router from "@/router";
-
 export default {
   name: 'MainView',
   data () {
     return {
-      auth: 1,
+      auth: '1',
       id: '',
-      pw: '',
-      link : '/uJoinView'
+      pw: ''
     }
   },
-  compatConfig: { MODE: 3 },
   methods: {
     logInBtn () {
       this.$axios
@@ -56,16 +52,11 @@ export default {
         .finally(() => {
           console.log('로그인실행')
         })
-    },
-    changeLink () {
-      console.log(this.auth)
-      if(this.auth === '1') this.link = '/uJoinView'
-      else this.link = '/cJoinView'
-      console.log(this.link)
     }
   }
 }
 </script>
+
 
 <style scoped>
 .wrapBox {
@@ -99,7 +90,7 @@ export default {
 
 /*회사 로고 넣는 곳 높이 넓힘*/
 .logoBox {
-height: 100px;
+  height: 100px;
 }
 
 .miniWrapBox {
