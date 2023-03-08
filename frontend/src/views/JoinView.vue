@@ -1,11 +1,11 @@
 <template>
   <div class="mainBox">
     <div class="UserBox">
-      <div class="leftBox">
-        <a href="#">개인회원</a>
-      </div>
-      <div class="rightBox" @click="OpenForm($event)">
-        <a href="#">기업회원</a>
+      <div>
+        <input type="radio" id="userType" name="selectType" class="leftBox" @change="changeJoinType($event)" :checked="this.mg_auth">
+        <label for="userType">개인회원</label>
+        <input type="radio" id="companyType" name="selectType" class="rightBox" @change="changeJoinType($event)" :checked="!this.mg_auth">
+        <label for="companyType">기업회원</label>
       </div>
       <p>
         <strong :style="{color:'red'}">*</strong>는 필수입력 정보란입니다.
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="CompanyBox display_hidden">
+    <div :class="{ CompanyBox: true ,'display_hidden': this.mg_auth === '1' ? true : false }">
       <div>
         <div class="leftBox" @click="OpenForm($event)">
           <a href="#">개인회원</a>
@@ -114,6 +114,8 @@ export default {
   name: 'uJoinView',
   data: function () {
     return {
+      mg_auth : this.$store.getters.getMg_auth,
+      radioCheck : this.$store.getters.getMg_auth === 1 ? true : false,
       username: this.username,
       id: this.id,
       password: this.password,
@@ -124,6 +126,9 @@ export default {
       checkedBox : [],
       errorMsg : []
     }
+  },
+  mounted () {
+    console.log(this.radioCheck)
   },
   methods: {
     // 아이디 중복확인 메서드
@@ -146,6 +151,18 @@ export default {
         console.log(this.errorMsg)
         e.preventDefault()
       }
+    },
+    // 개인, 기업 회원가입 구분 메서드
+    changeJoinType(e) {
+      if(e.target.id === 'userType') {
+        this.mg_auth = '1';
+        this.$store.commit("setMg_auth", "1")
+      }
+      else {
+        this.mg_auth = '2';
+        this.$store.commit("setMg_auth", "2")
+      }
+      console.log(this.mg_auth)
     }
   }
 }

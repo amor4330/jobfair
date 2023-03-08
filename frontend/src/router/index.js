@@ -15,11 +15,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-
   {
-    path: '/uJoinView',
-    name: 'uJoinView',
-    component: () => import('../views/user/uJoinView.vue')
+    path: '/joinView',
+    name: 'joinView',
+    component: () => import('../views/JoinView.vue')
   },
   {
     path: '/uMainView',
@@ -41,11 +40,6 @@ const routes = [
     path: '/cEmpModiView',
     name: 'cEmpModiView',
     component: () => import('../views/company/cEmpModiView.vue')
-  },
-  {
-    path: '/cJoinView',
-    name: 'cJoinView',
-    component: () => import('../views/company/cJoinView.vue')
   }
 ]
 
